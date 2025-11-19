@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\RootController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return test_run();
-});
+Route::get('/',[RootController::class,'root'])->name('root');

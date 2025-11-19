@@ -6,3 +6,59 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+html{
+    //position: relative;
+    height: 100%;
+
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+    body{
+        font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei UI",Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+        font-size: 14px;
+        padding-top: 90px;
+        padding-bottom: 45px;
+
+        .nav, .my_navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-top: 4px solid darkcyan;
+        }
+
+        #base{
+            margin-bottom: 60px;
+        }
+
+        footer.footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 12px;
+            background-color: #000000;
+            color: #eee;
+            a{
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+
+
+
