@@ -5,14 +5,13 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
 // Fontawesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
 
 html{
     //position: relative;
@@ -23,6 +22,10 @@ html{
     }
     a:hover{
         text-decoration: underline;
+    }
+
+    .my_captcha{
+        cursor: pointer;
     }
 
     body{
@@ -58,6 +61,7 @@ html{
         }
     }
 }
+
 
 
 

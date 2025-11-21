@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm my_navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{route('root')}}">
             <img src="{{asset('/pics/logo/Laravel.png')}}" alt="logo" width="30px">
             BBS Chat
         </a>
@@ -45,7 +45,7 @@
                             </li>
                             <li><hr class="dropdown-divider"></li>
                             <li class="text-center">
-                                <form action="{{route('logout')}}" method="post" onsubmit="return confirm('你确定要退出吗？')">
+                                <form action="{{route('logout')}}" method="post" onsubmit="return confirm('确定要退出吗？')">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-danger">
                                         <i class="fa-solid fa-right-from-bracket"></i>
