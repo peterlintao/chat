@@ -33,15 +33,21 @@ html{
         font-size: 14px;
         padding-top: 90px;
         padding-bottom: 45px;
+        min-height: 100vh;
 
         .nav, .my_navbar{
             position: fixed;
             top: 0;
             width: 100%;
             border-top: 4px solid darkcyan;
+            z-index: 2000;
+
+            .dropdown-menu {
+                z-index: 9999 !important;
+            }
         }
 
-        #base{
+        #app{
             margin-bottom: 60px;
         }
 

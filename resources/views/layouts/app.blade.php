@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('layouts._header')
-    <div id="base" class="container">
+    <div id="app" class="container">
         @include('shared._message')
         @yield('content')
     </div>
