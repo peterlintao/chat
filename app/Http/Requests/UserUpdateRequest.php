@@ -29,6 +29,7 @@ class UserUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:100','min:2','regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9\-\_]+$/u', Rule::unique('users')->ignore(Auth::user()->id)],
             'email' => ['required', 'email', Rule::unique('users')->ignore(Auth::user()->id),],
             'introduction' => ['nullable', 'string', 'max:200','min:2'],
+            'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png', 'max:2048', 'dimensions:min_width=300,min_height=300'],
         ];
     }
 
@@ -49,6 +50,7 @@ class UserUpdateRequest extends FormRequest
             'name'=> '用户名',
             'introduction' => '用户简介',
             'email'=>'电子邮件',
+            'avatar' => '用户头像',
         ];
     }
 }
