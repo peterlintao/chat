@@ -10,11 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link {{ request()->routeIs('topics.index') ? 'active text-primary fw-bold' : '' }}" aria-current="page" href="{{route('topics.index')}}">帖子</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+                @foreach(\App\Models\Category::all() as $category)
+                    <li class="nav-item">
+                        <a class="nav-link {{ category_navbar_active($category) }}"
+                           href="{{ route('categories.show', $category) }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
             <ul class="navbar-nav">
                 @guest

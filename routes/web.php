@@ -42,3 +42,9 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::resource('users', 'UsersController')->only(['show','edit','update']);
+
+//帖子的资源路由
+Route::resource('topics', 'TopicController');
+
+//分类
+Route::resource('categories', 'CategoryController')->only(['show']);

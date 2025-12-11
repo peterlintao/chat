@@ -22667,3 +22667,9 @@ html body footer.footer {
 html body footer.footer a {
   margin-left: 16px;
 }
+html body a.my_link {
+  cursor: pointer;
+}
+html body .pagination-container p.small.text-muted {
+  display: none !important;
+}

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RootController extends Controller
 {
-  public function root(ImageUploadHandler $uploader){
+  public function root(){
       return view('pages.root');
   }
 }
