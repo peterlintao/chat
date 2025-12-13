@@ -13,7 +13,7 @@ class StoreTopicRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreTopicRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:200',
+            'content' => 'required|max:2000',
+            'category_id' => 'required|exists:categories,id',
+        ];
+    }
+    public function attributes(){
+        return [
+            'title' => '帖子标题',
+            'content' => '帖子内容',
+            'category' => '帖子分类',
         ];
     }
 }

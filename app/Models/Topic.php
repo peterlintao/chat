@@ -58,4 +58,22 @@ class Topic extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+
+    public function scopeRecent($query){
+        return $query->orderBy('created_at', 'desc');
+    }
+
+    public function scopeRecentReplied($query){
+        return $query->orderBy('updated_at', 'desc');
+    }
+
+    public function scopeWithOrder($query, $order)
+    {
+        if ($order === 'recent') {
+            return $query->recent();
+        }
+
+        return $query->recentReplied();
+    }
+
 }

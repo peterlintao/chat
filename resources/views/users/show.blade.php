@@ -27,7 +27,15 @@
             </div>
             <div class="card mt-2">
                 <div class="card-body">
-                    <h1 class="card-title">{{$user->introduction??'这个人很懒，什么都没有写'}}</h1>
+                    <ul class="nav nav-tabs position-relative">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">TA的帖子</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TA的回复</a>
+                        </li>
+                    </ul>
+                    @include('users._topics',['topics'=>$user->topics()->recent()->paginate(6)])
                 </div>
             </div>
         </div>

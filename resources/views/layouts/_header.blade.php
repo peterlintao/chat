@@ -30,6 +30,11 @@
                         <a class="nav-link" href="{{route('login')}}">登录</a>
                     </li>
                 @else
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="fa-solid fa-plus text-primary text-decoration-none"
+                           href="{{route('topics.create')}}"
+                           title="我要发帖"></a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="img-thumbnail" src="{{Auth::user()->avatar}}" alt="avatar" style="width: 40px">

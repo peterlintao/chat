@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-  public function show(Category $category){
-      $topics = $category->topics()->with('user','category')->paginate(10);
+  public function show(Category $category, Request $request){
+      $topics = $category->topics()->with('user','category')->withOrder($request->get('order'))->paginate(10);
       return view('topics.index', compact('topics','category'));
   }
 }

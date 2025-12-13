@@ -12,8 +12,10 @@
             @endif
             <div class="card">
                 <div class="card-header bg-transparent">
-                    <button type="button" class="btn active" data-bs-toggle="button">最后评论</button>
-                    <button type="button" class="btn" data-bs-toggle="button" aria-pressed="true">最新发帖</button>
+                    <a class="btn {{request('order')!='recent'?'active':''}} text-decoration-none"
+                       href="{{Request::url()}}?order=default">最后评论</a>
+                    <a  class="btn {{request('order')=='recent'?'active':''}} text-decoration-none"
+                       href="{{Request::url()}}?order=recent">最新发帖</a>
                 </div>
                 <div class="card-body">
                     @include('topics.topic_list',['topics'=>$topics])
