@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\StoreTopicRequest;
 use App\Http\Requests\UpdateTopicRequest;
 use App\Models\Topic;
@@ -41,9 +42,9 @@ class TopicController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreTopicRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreTopicRequest $request,Topic $topic):Topic
+    public function store(StoreTopicRequest $request,Topic $topic)
     {
         $topic->fill($request->all());
         $topic->user_id = Auth::user()->id;
@@ -94,5 +95,25 @@ class TopicController extends Controller
     public function destroy(Topic $topic)
     {
         //
+    }
+
+    //上传富文本编辑器图片
+    public function uploadImage(Request $request, ImageUploadHandler $uploader){
+        $data = [
+            'success' => false,
+            'message' => '图片文件上传失败',
+            'file_path' => ''
+        ];
+
+        if ($file = $request->upload_file) {
+            $result = $uploader->save($file, 'topics', Auth::id(),800);
+            if ($result) {
+                $data['success'] = true;
+                $data['message'] = '图片文件上传成功';
+                $data['file_path'] = $result['path'];
+            }
+        }
+
+        return $data;
     }
 }

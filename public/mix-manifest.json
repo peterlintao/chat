@@ -1,7 +1,9 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?6f05ca9ab7b5345dbc07d1339a8b593b": "/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?6f05ca9ab7b5345dbc07d1339a8b593b",
-    "/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?8ae0d37556ff1e685de2acb2a675ebaf": "/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?8ae0d37556ff1e685de2acb2a675ebaf",
-    "/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?1c5c7716b05754cb4eab190e5ed2838c": "/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?1c5c7716b05754cb4eab190e5ed2838c"
+    "/js/app.js": "/js/app.js?id=e49aa0dd2477ad2853855b4cb779a806",
+    "/js/hotkeys.js": "/js/hotkeys.js?id=60b95061e721b635da02b5cc7792204b",
+    "/js/module.js": "/js/module.js?id=1f0206730b87684b7ad654a458319014",
+    "/js/simditor.js": "/js/simditor.js?id=e19ffe3d664de3d4228a9bd3573b4a6b",
+    "/js/uploader.js": "/js/uploader.js?id=0e7f04273d8e2a0a834c6884635bb6d9",
+    "/css/app.css": "/css/app.css?id=e35fcbb81782838b6bae551ae5f55dac",
+    "/css/simditor.css": "/css/simditor.css?id=69eb7767d3b20549b33fafd8e1255363"
 }

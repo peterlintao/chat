@@ -46,5 +46,8 @@ Route::resource('users', 'UsersController')->only(['show','edit','update']);
 //帖子的资源路由
 Route::resource('topics', 'TopicController');
 
+//富文本上传图片路由
+Route::post('uploadImage', 'TopicController@uploadImage')->name('topics.uploadImage');
+
 //分类
 Route::resource('categories', 'CategoryController')->only(['show']);

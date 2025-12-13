@@ -2,7 +2,6 @@
 
 namespace App\Handlers;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Laravel\Facades\Image;
 
 class ImageUploadHandler{

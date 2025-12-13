@@ -1,6 +1,8 @@
 @extends('layouts.app')
-
 @section('title','发布帖子')
+@section('editor_css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
+@endsection
 
 @section('content')
     <div class="row">
@@ -27,16 +29,41 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="content" class="form-label">帖子内容</label>
-                            <textarea class="form-control" id="content" name="content" rows="6" placeholder="请输入......" style="resize: none">{{old('content')}}</textarea>
+                            <label for="editor" class="form-label">帖子内容</label>
+                            <textarea class="form-control" id="editor" name="content" rows="6" placeholder="请输入......" style="resize: none">{{old('content')}}</textarea>
                         </div>
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-primary me-3">确定</button>
-                            <a href="{{}}" class="btn btn-warning text-decoration-none">取消</a>
+                            <a href="{{url()->previous()}}" class="btn btn-warning text-decoration-none">取消</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('editor_js')
+    <script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            let editor = new Simditor({
+                textarea: $('#editor'),
+                upload:{
+                    url:'{{route('topics.uploadImage')}}',
+                    params:{
+                        _token:'{{csrf_token()}}',
+                    },
+                    fileKey:'upload_file',
+                    connectionCount:5,
+                    leaveConfirm:'图片正在上传中，关闭将会被取消',
+                },
+                pasteImage:true,
+            });
+        });
+    </script>
 @endsection

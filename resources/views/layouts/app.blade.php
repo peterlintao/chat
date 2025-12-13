@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <title>@yield('title', 'BbsChat项目') </title>
+    @yield('editor_css')
 </head>
 <body>
     @include('layouts._header')
@@ -18,5 +19,6 @@
     @include('layouts._footer')
 
     <script src="{{mix('js/app.js')}}"></script>
+    @yield('editor_js')
 </body>
 </html>
